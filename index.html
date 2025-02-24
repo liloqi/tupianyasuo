@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片压缩工具</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 主容器 -->
+    <div class="container">
+        <h1>图片压缩工具</h1>
+        
+        <!-- 上传区域 -->
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-inner">
+                <svg class="upload-icon" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32 8L44 20H36V40H28V20H20L32 8Z" fill="#0071e3"/>
+                    <path d="M56 52V36H48V52H16V36H8V52C8 56.4183 11.5817 60 16 60H48C52.4183 60 56 56.4183 56 52Z" fill="#0071e3"/>
+                </svg>
+                <p>拖拽图片到这里或点击上传</p>
+                <p class="upload-hint">支持 PNG、JPG 格式</p>
+                <input type="file" id="fileInput" accept="image/png,image/jpeg" hidden>
+            </div>
+        </div>
+
+        <!-- 图片预览和压缩控制区域 -->
+        <div class="preview-container" id="previewContainer" style="display: none;">
+            <div class="preview-section">
+                <div class="preview-box">
+                    <h3>原图</h3>
+                    <div class="image-container">
+                        <img id="originalImage" alt="原图预览">
+                    </div>
+                    <div class="file-info">
+                        <span>文件大小：</span>
+                        <span id="originalSize">0 KB</span>
+                    </div>
+                </div>
+                
+                <div class="preview-box">
+                    <h3>压缩后</h3>
+                    <div class="image-container">
+                        <img id="compressedImage" alt="压缩后预览">
+                    </div>
+                    <div class="file-info">
+                        <span>文件大小：</span>
+                        <span id="compressedSize">0 KB</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 压缩控制区域 -->
+            <div class="compression-controls">
+                <div class="quality-control">
+                    <label for="qualitySlider">压缩质量：<span id="qualityValue">80%</span></label>
+                    <input type="range" id="qualitySlider" min="1" max="100" value="80">
+                </div>
+                <button id="downloadBtn" class="download-btn">下载压缩后的图片</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html> 
